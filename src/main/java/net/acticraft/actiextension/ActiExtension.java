@@ -3,6 +3,7 @@ package net.acticraft.actiextension;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.ipvp.canvas.MenuFunctionListener;
 
 import java.awt.*;
 
@@ -21,6 +22,8 @@ public final class ActiExtension extends JavaPlugin {
         Bukkit.getConsoleSender().sendMessage(ChatColor.GRAY + "|");
         Bukkit.getConsoleSender().sendMessage(ChatColor.GRAY + "[]===============================================[]");
 
+
+        Bukkit.getPluginManager().registerEvents(new MenuFunctionListener(), this);
     }
 
     @Override
