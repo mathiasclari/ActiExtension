@@ -3,3 +3,4 @@ version: '${project.version}'
 main: net.acticraft.actiextension.ActiExtension
 api-version: 1.18
 authors: [Mat]
+
