@@ -1,4 +1,6 @@
 package net.acticraft.actiextension.GuiList;
 
-public class HelpGui {
+import org.bukkit.event.Listener;
+
+public class HelpGui implements Listener {
 }
