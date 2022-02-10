@@ -67,7 +67,7 @@ public class HelpGui implements Listener {
         final Player p = (Player) e.getWhoClicked();
 
         // Using slots click is a best option for your inventory click's
-        p.sendMessage("You clicked at slot " + e.getRawSlot());
+        p.sendMessage("You clicked at slot: " + e.getRawSlot());
     }
 
     // Cancel dragging in our inventory
