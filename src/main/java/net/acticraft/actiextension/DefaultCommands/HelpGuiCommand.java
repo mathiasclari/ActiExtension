@@ -12,11 +12,6 @@ public class HelpGuiCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if(sender instanceof Player){
 
-
-            public void openInventory(final HumanEntity ent) {
-
-                ent.openInventory(HelpGui);
-            }
         }
         return false;
     }
