@@ -89,5 +89,11 @@
             <version>1.7</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>com.github.BeYkeRYkt</groupId>
+            <artifactId>lightapi-bukkit-common</artifactId>
+            <version>5.1.0</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 </project>
