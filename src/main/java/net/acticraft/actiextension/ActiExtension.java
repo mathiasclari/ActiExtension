@@ -1,5 +1,6 @@
 package net.acticraft.actiextension;
 
+import net.acticraft.actiextension.DefaultCommands.HelpGuiCommand;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -20,6 +21,11 @@ public final class ActiExtension extends JavaPlugin {
         Bukkit.getConsoleSender().sendMessage(ChatColor.GRAY + "|" + ChatColor.of(new Color(65, 65, 65)) + "       Type:" + ChatColor.of(new Color(166, 255, 241)) + "Open Source");
         Bukkit.getConsoleSender().sendMessage(ChatColor.GRAY + "|");
         Bukkit.getConsoleSender().sendMessage(ChatColor.GRAY + "[]===============================================[]");
+
+        getCommand("helpgui").setExecutor(new HelpGuiCommand());
+
+
+
 
     }
 
