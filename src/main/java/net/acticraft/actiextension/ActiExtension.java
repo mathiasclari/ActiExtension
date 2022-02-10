@@ -27,7 +27,7 @@ public final class ActiExtension extends JavaPlugin {
     public void onDisable() {
         Bukkit.getConsoleSender().sendMessage(ChatColor.GRAY + "[]=================[" + ChatColor.of(new Color(61, 168, 255)) + ChatColor.BOLD + "ActiExtension" + ChatColor.GRAY + "]=================[]");
         Bukkit.getConsoleSender().sendMessage(ChatColor.GRAY + "|");
-        Bukkit.getConsoleSender().sendMessage(ChatColor.GRAY + "|" + ChatColor.of(new Color(65, 65, 65)) + "       Name:" + ChatColor.of(new Color(129, 61, 255)) + " SHUTTING DOWN");
+        Bukkit.getConsoleSender().sendMessage(ChatColor.GRAY + "|" + ChatColor.of(new Color(65, 65, 65)) + "       Status:" + ChatColor.of(new Color(129, 61, 255)) + " SHUTTING DOWN");
         Bukkit.getConsoleSender().sendMessage(ChatColor.GRAY + "|");
         Bukkit.getConsoleSender().sendMessage(ChatColor.GRAY + "[]===============================================[]");
     }
