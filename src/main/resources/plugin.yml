@@ -4,7 +4,7 @@ main: net.acticraft.actiextension.ActiExtension
 api-version: 1.18
 authors: [Mat]
 commands:
-  gui:
+  hgui:
     description: helpGUI
 
 

@@ -1,8 +1,10 @@
 package net.acticraft.actiextension;
 
 import net.acticraft.actiextension.DefaultCommands.HelpGuiCommand;
+import net.acticraft.actiextension.GUIEvents.ClickEvent;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.awt.*;
@@ -22,9 +24,14 @@ public final class ActiExtension extends JavaPlugin {
         Bukkit.getConsoleSender().sendMessage(ChatColor.GRAY + "|");
         Bukkit.getConsoleSender().sendMessage(ChatColor.GRAY + "[]===============================================[]");
 
-        getCommand("helpgui").setExecutor(new HelpGuiCommand());
+
+        //Command
+        getCommand("hgui").setExecutor(new HelpGuiCommand());
 
 
+
+        //Events
+        getServer().getPluginManager().registerEvents(new ClickEvent(), this);
 
 
     }
