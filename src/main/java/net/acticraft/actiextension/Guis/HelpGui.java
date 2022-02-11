@@ -35,7 +35,7 @@ public class HelpGui implements CommandExecutor , Listener {
         ItemMeta suicide_meta = suicide.getItemMeta();
         suicide_meta.setDisplayName(ChatColor.of(new Color(255, 61, 61))+"Suicide");
         ArrayList<String> suicide_lore = new ArrayList<>();
-        suicide_lore.add(ChatColor.of(new Color(211, 40, 104))+"Try it out");
+        suicide_lore.add(ChatColor.of(new Color(152, 23, 70))+"Try it out");
         suicide_meta.setLore(suicide_lore);
         suicide.setItemMeta(suicide_meta);
 
