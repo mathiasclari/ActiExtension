@@ -60,30 +60,7 @@ public class HelpGui implements CommandExecutor , Listener {
         if(event.getView().getTitle().equalsIgnoreCase("Help Gui")) {
 
             // item
-            if (event.getInventory().equals(HelpGUIMeunu)) {
-                Player player = (Player) event.getWhoClicked();
-                //Determine what they selected and what to do
-                switch (event.getCurrentItem().getType()) {
-                    case TNT:
-                        player.closeInventory();
-                        player.setHealth(0.0);
-                        player.sendMessage("You just killed yourself");
-                        break;
-                    case BREAD:
-                        player.closeInventory();
-                        player.setFoodLevel(20);
-                        player.sendMessage("YUM!");
-                        break;
-                    case DIAMOND_SWORD:
-                        player.closeInventory();
-                        player.getInventory().addItem(new ItemStack(DIAMOND_SWORD));
-                        player.sendMessage("Don't slice yourself");
-                        break;
-                }
 
-
-                event.setCancelled(true);
-            }
             event.setCancelled(true);
 
         }
