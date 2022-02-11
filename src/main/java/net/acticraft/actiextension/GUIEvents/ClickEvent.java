@@ -1,5 +1,6 @@
 package net.acticraft.actiextension.GUIEvents;
 
+import net.acticraft.actiextension.DefaultCommands.HelpGuiCommand;
 import net.md_5.bungee.api.ChatColor;
 
 import org.bukkit.Material;
@@ -8,6 +9,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import java.awt.*;
 
@@ -16,7 +18,7 @@ public class ClickEvent implements Listener {
     @EventHandler
     public void clickEvent(InventoryClickEvent e) {
 
-        if (e.getClickedInventory().getTitle().equalsIgnoreCase(ChatColor.of(new Color(61, 168, 255)) + "Help Gui")) {
+        if (e.getClickedInventory().getClass().getName().equalsIgnoreCase(ChatColor.of(new Color(61, 168, 255)) + "Help Gui")) {
             Player player = (Player) e.getWhoClicked();
             //Determine what they selected and what to do
             switch (e.getCurrentItem().getType()) {

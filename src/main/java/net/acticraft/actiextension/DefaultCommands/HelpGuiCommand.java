@@ -21,6 +21,7 @@ public class HelpGuiCommand implements CommandExecutor {
         if(sender instanceof Player){
 
 
+
             Player p = (Player) sender;
 
             Inventory hgui = Bukkit.createInventory(p, 9, ChatColor.of(new Color(61, 168, 255))+"Help Gui");
