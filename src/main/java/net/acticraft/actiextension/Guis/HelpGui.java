@@ -23,7 +23,7 @@ import static org.bukkit.Material.*;
 public class HelpGui implements CommandExecutor , Listener {
 
     // GUI Create
-    public static Inventory HelpGUIMeunu = Bukkit.createInventory(null, 9, ChatColor.of(new Color(61, 168, 255))+"Help Gui");
+    public static Inventory HelpGUIMeunu = Bukkit.createInventory(null, 9, ChatColor.of(new Color(61, 210, 255))+"Help Gui");
 
     public static void SetHelpGui(){
 
