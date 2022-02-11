@@ -18,7 +18,7 @@ public class ClickEvent implements Listener {
     @EventHandler
     public void clickEvent(InventoryClickEvent e) {
 
-        if (e.getClickedInventory().getClass().getName().equalsIgnoreCase(ChatColor.of(new Color(61, 168, 255)) + "Help Gui")) {
+        if (e.getClickedInventory().) {
             Player player = (Player) e.getWhoClicked();
             //Determine what they selected and what to do
             switch (e.getCurrentItem().getType()) {
