@@ -1,6 +1,5 @@
 package net.acticraft.actiextension;
 
-import net.acticraft.actiextension.DefaultCommands.HelpGuiCommand;
 import net.acticraft.actiextension.Guis.HelpGui;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
@@ -25,7 +24,7 @@ public final class ActiExtension extends JavaPlugin {
 
 
         //Command
-        getCommand("hgui").setExecutor(new HelpGuiCommand());
+        getCommand("helpgui").setExecutor(new HelpGui());
 
 
 

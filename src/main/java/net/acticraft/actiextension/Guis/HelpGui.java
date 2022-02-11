@@ -54,19 +54,10 @@ public class HelpGui implements CommandExecutor , Listener {
 
     }
 
-    @EventHandler
-    public void onInventoryClick(final InventoryDragEvent e) {
-
-        if (e.getInventory().equals(HelpGUIMeunu)) {
-
-            e.setCancelled(true);
-        }
-    }
-
     // events
     @EventHandler
     public void HelpMenuAction(InventoryClickEvent event){
-        if((event.getClick() != null) && event.getView().getTitle().equalsIgnoreCase("Help Gui")) {
+        if(event.getView().getTitle().equalsIgnoreCase("Help Gui")) {
 
             // item
             if (event.getInventory().equals(HelpGUIMeunu)) {
