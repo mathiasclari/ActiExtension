@@ -57,9 +57,11 @@ public class HelpGui implements CommandExecutor , Listener {
     // events
     @EventHandler
     public void HelpMenuAction(InventoryClickEvent event){
-        if(event.getView().getTitle().equalsIgnoreCase("Help Gui")) {
+        System.out.println(event.getView().getTitle().toString());
+        if(event.getView().getTitle().equalsIgnoreCase(ChatColor.of(new Color(61, 210, 255))+"Help Gui")) {
 
             // item
+
 
             event.setCancelled(true);
 
