@@ -10,6 +10,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryDragEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -48,7 +49,18 @@ public class HelpGui implements CommandExecutor , Listener {
         if(sender instanceof Player) {
             ((Player) sender).getPlayer().openInventory(HelpGUIMeunu);
         }
+
         return false;
+
+    }
+
+    @EventHandler
+    public void onInventoryClick(final InventoryDragEvent e) {
+
+        if (e.getInventory().equals(HelpGUIMeunu)) {
+
+            e.setCancelled(true);
+        }
     }
 
     // events
@@ -57,7 +69,7 @@ public class HelpGui implements CommandExecutor , Listener {
         if((event.getClick() != null) && event.getView().getTitle().equalsIgnoreCase("Help Gui")) {
 
             // item
-            if (event.getInventory().equals("hgui")) {
+            if (event.getInventory().equals(HelpGUIMeunu)) {
                 Player player = (Player) event.getWhoClicked();
                 //Determine what they selected and what to do
                 switch (event.getCurrentItem().getType()) {
@@ -82,6 +94,9 @@ public class HelpGui implements CommandExecutor , Listener {
                 event.setCancelled(true);
             }
             event.setCancelled(true);
+
         }
+
     }
+
 }

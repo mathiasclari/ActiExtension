@@ -1,5 +1,6 @@
 package net.acticraft.actiextension.DefaultCommands;
 
+import net.acticraft.actiextension.Guis.HelpGui;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 
@@ -17,6 +18,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.awt.*;
 import java.util.ArrayList;
 
+import static net.acticraft.actiextension.Guis.HelpGui.HelpGUIMeunu;
+
 public class HelpGuiCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -26,7 +29,7 @@ public class HelpGuiCommand implements CommandExecutor {
 
             Player p = (Player) sender;
 
-            Inventory hgui = Bukkit.createInventory(p, 9, ChatColor.of(new Color(61, 168, 255))+"Help Gui");
+            Inventory HelpGUIMeunu = Bukkit.createInventory(p, 9, ChatColor.of(new Color(61, 168, 255))+"Help Gui");
 
             ItemStack suicide = new ItemStack(Material.TNT);
             ItemStack feed = new ItemStack(Material.CAKE);
@@ -40,21 +43,25 @@ public class HelpGuiCommand implements CommandExecutor {
             suicide.setItemMeta(suicide_meta);
 
             ItemStack[] menu_items = {suicide, feed, sword};
-            hgui.setContents(menu_items);
+            HelpGUIMeunu.setContents(menu_items);
 
 
-            p.openInventory(hgui);
+            p.openInventory(HelpGUIMeunu);
 
 
 
         }
 
         return false;
+
     }
     @EventHandler
     public void onInventoryClick(final InventoryDragEvent e) {
-        if (e.getInventory().hgui) {
+
+        Inventory inv = e.getWhoClicked().getOpenInventory().getTopInventory();
+        if (inv.HelpGUIMeunu() == HelpGUIMeunu) {
             e.setCancelled(true);
+
         }
     }
 
