@@ -1,11 +1,9 @@
 package net.acticraft.actiextension;
 
 import net.acticraft.actiextension.DefaultCommands.HelpGuiCommand;
-import net.acticraft.actiextension.GUIEvents.ClickEvent;
 import net.acticraft.actiextension.Guis.HelpGui;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
-import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.awt.*;
@@ -32,7 +30,7 @@ public final class ActiExtension extends JavaPlugin {
 
 
         //Events
-        getServer().getPluginManager().registerEvents(new ClickEvent(), this);
+        getServer().getPluginManager().registerEvents(new HelpGui(), this);
 
         // Load HelpGUI
         HelpGui.SetHelpGui();
