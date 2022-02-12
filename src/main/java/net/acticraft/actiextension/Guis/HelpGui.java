@@ -9,6 +9,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.inventory.ClickType;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryDragEvent;
 import org.bukkit.inventory.Inventory;
@@ -28,18 +29,18 @@ public class HelpGui implements CommandExecutor , Listener {
     public static void SetHelpGui(){
 
         // SetItems
-        ItemStack suicide = new ItemStack(TNT);
+        ItemStack info = new ItemStack(BOOK);
         ItemStack feed = new ItemStack(Material.CAKE);
         ItemStack sword = new ItemStack(Material.IRON_SWORD);
 
-        ItemMeta suicide_meta = suicide.getItemMeta();
-        suicide_meta.setDisplayName(ChatColor.of(new Color(255, 61, 61))+"Suicide");
+        ItemMeta info_meta = info.getItemMeta();
+        info_meta.setDisplayName(ChatColor.of(new Color(255, 61, 61))+"WhiteList");
         ArrayList<String> suicide_lore = new ArrayList<>();
-        suicide_lore.add(ChatColor.of(new Color(153, 4, 56))+"Try it out");
-        suicide_meta.setLore(suicide_lore);
-        suicide.setItemMeta(suicide_meta);
+        suicide_lore.add(ChatColor.of(new Color(153, 4, 56))+"Turn it on!");
+        info_meta.setLore(suicide_lore);
+        info.setItemMeta(info_meta);
 
-        ItemStack[] menu_items = {suicide, feed, sword};
+        ItemStack[] menu_items = {info, feed, sword};
         HelpGUIMeunu.setContents(menu_items);
     }
 
@@ -54,19 +55,27 @@ public class HelpGui implements CommandExecutor , Listener {
 
     }
 
-    // events
     @EventHandler
-    public void HelpMenuAction(InventoryClickEvent event){
-        System.out.println(event.getView().getTitle().toString());
-        if(event.getView().getTitle().equalsIgnoreCase(ChatColor.of(new Color(61, 210, 255))+"Help Gui")) {
+    public void HelpMenuAction(InventoryClickEvent event) {
+        if(event.getView().getTitle().equalsIgnoreCase(ChatColor.of(new Color(61, 210, 255))+"Help Gui") && event.getCurrentItem() != null) {
+            event.getWhoClicked().closeInventory();
+            if (event.getCurrentItem().getType() == Material.BOOK) {
+                if (event.getClick().equals(ClickType.RIGHT)) {
+                    ItemMeta meta = event.getCurrentItem().getItemMeta();
+                    Bukkit.setWhitelist(true);
+                }
+            }
+                System.out.println(event.getView().getTitle().toString());
+                if (event.getView().getTitle().equalsIgnoreCase(ChatColor.of(new Color(61, 210, 255)) + "Help Gui")) {
 
-            // item
+                    // item
 
 
             event.setCancelled(true);
 
-        }
+                }
+
+            }
 
     }
-
 }
